@@ -31,6 +31,8 @@ install(
   INCLUDES DESTINATION include
 )
 
+install(DIRECTORY include/ DESTINATION include/)
+
 if(BUILD_TESTING)
   add_subdirectory(test)
 endif()
