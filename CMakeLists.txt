@@ -20,7 +20,12 @@ target_include_directories(${PROJECT_NAME}
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
-ament_target_dependencies(${PROJECT_NAME} ${dependencies})
+target_link_libraries(${PROJECT_NAME}
+  PUBLIC
+  console_bridge::console_bridge
+  PRIVATE
+  rcutils::rcutils
+)
 
 install(
   TARGETS ${PROJECT_NAME}
